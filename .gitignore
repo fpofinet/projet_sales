@@ -1,3 +1,4 @@
 /data/
 /pipeline.log
 /.env
+/src/__pycache__/*
