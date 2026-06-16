@@ -2,7 +2,7 @@ import csv
 import random
 from datetime import datetime, timedelta
 
-def generate_transactions(filename="data/transactions.csv", num_rows=200):
+def generate_transactions(filename="data/transactions.csv", num_rows=100):
     # Données de référence pour les dimensions
     clients = [
         {"id": "CLT01", "nom": "Alice Dupont", "pays": "France", "devise": "EUR"},
