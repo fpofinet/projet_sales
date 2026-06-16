@@ -8,7 +8,7 @@ def retrieveExchangeRate(dates):
         date la liste des taux de change
     """
 
-    rates =dict()
+    rates = dict()
     for date in dates:
         try :
             response = requests.get(url=f"https://api.frankfurter.dev/v2/rates?date={date}")
@@ -16,7 +16,7 @@ def retrieveExchangeRate(dates):
             logging.info(f"Recuperation des taux pour la date {date}")
             rates[date]=response.json()
         except requests.exceptions.RequestException as e:
-            logging.warning(f"Echec de recuperation des taux pour la date {date}")
+            logging.warning(f"Echec de recuperation des taux pour la date {date} : {e}")
             return None
     
     return rates
