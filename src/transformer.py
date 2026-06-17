@@ -33,7 +33,7 @@ def calculateAmountInEur(rates,data):
         data['rate'] = data.apply(lambda elt: getRate(elt['date'],elt['devise'],rates),axis=1)
         data['montant_eur'] = data['rate'] * data['montant']
         data['montant_eur'] = data['montant_eur'].apply(lambda x: '{:.2f}'.format(x))
-        #data = data.drop(["rate"])
+
         return data.drop(["rate"],axis=1)
     except Exception as e:
         logging.warning(f"Echec lors du calcule des montants en euro : {e}")

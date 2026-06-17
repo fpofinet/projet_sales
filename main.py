@@ -24,14 +24,11 @@ def run_pipeline():
     rates = ex.retrieveExchangeRate(unique_date)
     #on creer la colonne avec le montant en euro
     transformed = tr.calculateAmountInEur(rates=rates,data=raw_trans)
-    # print(transformed.info())
     #on recuperer les listes pres pour l'insertion dans chaque table
     clients,plans,trans=tr.format(transformed)
     #on persist les donnees en base de donnees
     ld.persist_data(clients,plans,trans)
-    # print(clients)
-    # print(plans)
-    # print(trans)
+
     print("####################### ==> FIN DU SCRIPT")
     
 
